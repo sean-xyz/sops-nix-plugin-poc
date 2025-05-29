@@ -1,0 +1,49 @@
+{
+  "nodes": {
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1748370509,
+        "narHash": "sha256-QlL8slIgc16W5UaI3w7xHQEP+Qmv/6vSNTpoZrrSlbk=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "4faa5f5321320e49a78ae7848582f684d64783e9",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "nixpkgs": "nixpkgs",
+        "sops-nix": "sops-nix"
+      }
+    },
+    "sops-nix": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1748279271,
+        "narHash": "sha256-jVoUgFvz1l1a+HXwiWF6T8v0G02lDEJtT0wW4q1raPs=",
+        "owner": "NovaViper",
+        "repo": "sops-nix",
+        "rev": "162aec01440132b0963f78e8344808577239fac3",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NovaViper",
+        "repo": "sops-nix",
+        "rev": "162aec01440132b0963f78e8344808577239fac3",
+        "type": "github"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}

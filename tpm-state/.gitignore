@@ -1,0 +1,4 @@
+# swtpm
+.lock
+pid
+stdout
