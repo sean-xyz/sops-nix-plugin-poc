@@ -6,7 +6,7 @@
 
 		sops-nix = {
 			# this is from pull request https://github.com/Mic92/sops-nix/pull/781
-			url = "github:NovaViper/sops-nix/162aec01440132b0963f78e8344808577239fac3";
+			url = "github:NovaViper/sops-nix/187cf1369866584cb33ee712de10e4a00c14e91a";
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
 	};

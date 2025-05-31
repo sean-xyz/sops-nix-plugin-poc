@@ -29,17 +29,17 @@
         ]
       },
       "locked": {
-        "lastModified": 1748279271,
-        "narHash": "sha256-jVoUgFvz1l1a+HXwiWF6T8v0G02lDEJtT0wW4q1raPs=",
+        "lastModified": 1748701231,
+        "narHash": "sha256-x5vLk1c8iIJSCTJ6IUzgNu/RYVvLxkBEoBOmrHVE6ao=",
         "owner": "NovaViper",
         "repo": "sops-nix",
-        "rev": "162aec01440132b0963f78e8344808577239fac3",
+        "rev": "187cf1369866584cb33ee712de10e4a00c14e91a",
         "type": "github"
       },
       "original": {
         "owner": "NovaViper",
         "repo": "sops-nix",
-        "rev": "162aec01440132b0963f78e8344808577239fac3",
+        "rev": "187cf1369866584cb33ee712de10e4a00c14e91a",
         "type": "github"
       }
     }
