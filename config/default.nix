@@ -1,7 +1,6 @@
 {
 	config,
 	hostPlatform,
-	pkgs,
 	...
 }: {
 	imports = [
@@ -14,7 +13,7 @@
 			efi.canTouchEfiVariables = true;
 		};
 
-		networking.hostName = "sops-nix-plugin-poc";
+		networking.hostName = "poc";
 
 		nixpkgs.hostPlatform = hostPlatform;
 
@@ -22,10 +21,13 @@
 			sudo.wheelNeedsPassword = false;
 		};
 
-		services.getty.autologinUser = "nixos";
+		services = {
+			getty.autologinUser = "nixos";
+			userborn.enable = true;
+		};
 
 		system = {
-			stateVersion = "25.05";
+			stateVersion = "25.11";
 		};
 
 		users = {
@@ -40,6 +42,14 @@
 
 				root = {
 					initialHashedPassword = "";
+				};
+
+				sean = {
+					isNormalUser = true;
+					extraGroups = [
+						"wheel"
+					];
+					hashedPasswordFile = config.sops.secrets."passphrases/sean".path;
 				};
 			};
 		};

@@ -11,9 +11,17 @@ It uses sops-nix [pull request 781](https://github.com/Mic92/sops-nix/pull/781)
 
 ## test TPM decryption
 
-This runs a virtual machine with a virtual TPM. The TPM state is persisted in ./tpm-state so that the age key generated from it works.
+1. run `just run`
+2. run the instructions that appear in the linux MOTD upon boot, e.g.
+	```
+	# test sops-nix tpm decryption
+	sudo cat /run/secrets/hello
 
-You can run the virtual machine with `just run`. The linux MOTD will give you a handful of instructions after it boots up.
+	# test sops-nix tpm decryption neededForUsers
+	sudo cat /run/secrets-for-users/passphrases/sean
+	```
+
+This runs a virtual machine with a virtual TPM. The TPM state is persisted in ./tpm-state so that the age key generated from it works.
 
 ## test TPM decryption without the TPM
 

@@ -40,6 +40,7 @@
 							nixpkgs.lib.nixosSystem {
 								specialArgs = {
 									hostPlatform = host;
+									rootPath = ./.;
 								};
 
 								modules = [
@@ -61,7 +62,7 @@
 						# this key's not available in the virtual machine, only the dev shell
 						SOPS_AGE_KEY = "AGE-SECRET-KEY-1G7LCH3GKX7ZYNVQG23YX2GWADR7UQ250WSNLKWTVKHGSX5JFVF6QXRR28S";
 
-						nativeBuildInputs =
+						packages =
 							builtins.attrValues {
 								inherit
 									(pkgsFor.${system})

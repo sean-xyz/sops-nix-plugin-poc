@@ -1,7 +1,6 @@
 {
-	config,
-	hostPlatform,
 	pkgs,
+	rootPath,
 	...
 }: {
 	config = {
@@ -21,7 +20,7 @@
 					mode = "0400";
 				};
 
-				"flake-secrets".source = ../secrets;
+				"flake-secrets".source = rootPath + /secrets;
 			};
 
 			variables = {
@@ -43,17 +42,27 @@
 				];
 			};
 
+			defaultSopsFile = rootPath + /secrets/secrets.yaml;
+
 			secrets = {
-				"hello" = {
-					sopsFile = ../secrets/secrets.yaml;
+				"hello" = {};
+
+				"passphrases/sean" = {
+					neededForUsers = true;
 				};
 			};
 		};
 
 		users = {
 			motd = ''
-				# test sops-nix tpm decryption:
+				# test sops-nix tpm decryption
 				sudo cat /run/secrets/hello
+
+				# test sops-nix tpm decryption neededForUsers
+				# should decrypt to $y$jDT$u/W9mnAZu1FpTrZDsgI54/$Itt9/oMk6s.BfaRVn2wrz.YkrfbbURBvr43RY4Lmr0C,
+				# which is a yescrypt hash of "sean"
+				sudo cat /run/secrets-for-users/passphrases/sean
+				su sean # enter password: sean
 
 				# optional - some things you can do to troubleshoot
 					# create a new tpm key
